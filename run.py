@@ -11,15 +11,16 @@ player_board = [['O' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 computer_board = [['O' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 
 # Place the battleships at random locations
-player_ships = []
-computer_ships = []
-for _ in range(NUM_SHIPS):
+player_ships = set()
+computer_ships = set()
+while len(player_ships) < NUM_SHIPS:
     player_ship_row = random.randint(0, BOARD_SIZE - 1)
     player_ship_col = random.randint(0, BOARD_SIZE - 1)
-    player_ships.append((player_ship_row, player_ship_col))
+    player_ships.add((player_ship_row, player_ship_col))
+while len(computer_ships) < NUM_SHIPS:
     computer_ship_row = random.randint(0, BOARD_SIZE - 1)
     computer_ship_col = random.randint(0, BOARD_SIZE - 1)
-    computer_ships.append((computer_ship_row, computer_ship_col))
+    computer_ships.add((computer_ship_row, computer_ship_col))
 
 # Shows the game boards
 def print_boards(player_board, computer_board):
@@ -30,13 +31,16 @@ def print_boards(player_board, computer_board):
     for row in computer_board:
         print(" ".join(row))
 
-# Checks that the users input is valid else throws an error
-def validate_input(guess_row, guess_col):
+# Checks that the user's input is valid else throws an error
+def validate_input(guess_row, guess_col, guessed_cells):
     if not isinstance(guess_row, int) or not isinstance(guess_col, int):
         print("Error: Invalid guess. Please enter integer values.")
         return False
     if guess_row < 0 or guess_row >= BOARD_SIZE or guess_col < 0 or guess_col >= BOARD_SIZE:
-        print("Error: Invalid guess. Please enter values within 0-4.")
+        print("Error: Invalid guess. Please enter integer values within 0-4.")
+        return False
+    if (guess_row, guess_col) in guessed_cells:
+        print("You guessed that one already, try again.")
         return False
     return True
 
@@ -44,10 +48,12 @@ def validate_input(guess_row, guess_col):
 for ship_row, ship_col in player_ships:
     player_board[ship_row][ship_col] = '*'
 
-# Game loop and sets amount of turns
-for turn in range(100):  # Ten turns to guess
-    print("Turn", turn + 1)
+# To make sure it doesn't accept duplicate answers.
+guessed_cells = set()
 
+# Game loop and sets amount of turns
+for turn in range(100):  # Change to determin rounds
+    print("Turn", turn + 1)
 
     # Print the game boards
     print_boards(player_board, computer_board)
@@ -62,19 +68,25 @@ for turn in range(100):  # Ten turns to guess
             print("Error: Invalid guess. Please enter integer values.")
             continue
 
-        # Checks if the players guess is valid
-        valid_guess = validate_input(guess_row, guess_col)
+        # Checks if the player's guess is valid
+        valid_guess = validate_input(guess_row, guess_col, guessed_cells)
+
+    # Add the guessed cell to the set of guessed cells
+    guessed_cells.add((guess_row, guess_col))
 
     # Check if the guess is correct
     if (guess_row, guess_col) in computer_ships:
         print("Congratulations,", player_name + "! You sunk a battleship!")
         computer_board[guess_row][guess_col] = '@'
         computer_ships.remove((guess_row, guess_col))
-    elif computer_board[guess_row][guess_col] == 'X':
-        print("You guessed that one already.")
     else:
         print("You missed.")
         computer_board[guess_row][guess_col] = 'X'
+
+    # Check if all computer's ships have been sunk
+    if len(computer_ships) == 0:
+        print("Congratulations,", player_name + "! You sunk all the computer's battleships!")
+        break
 
     # Computer's turn
     computer_guess_row = random.randint(0, BOARD_SIZE - 1)
