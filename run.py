@@ -1,6 +1,6 @@
 import random
 
-# Constants
+
 BOARD_SIZE = 5
 NUM_SHIPS = 4
 
@@ -46,7 +46,7 @@ for turn in range(10):  # Ten turns to guess
     # Check if the guess is correct
     if (guess_row, guess_col) in computer_ships:
         print("Congratulations! You sunk a battleship!")
-        computer_board[guess_row][guess_col] = 'X'
+        computer_board[guess_row][guess_col] = '@'
         computer_ships.remove((guess_row, guess_col))
     elif computer_board[guess_row][guess_col] == 'X':
         print("You guessed that one already.")
@@ -61,10 +61,8 @@ for turn in range(10):  # Ten turns to guess
     # Check if the computer's guess is correct
     if (computer_guess_row, computer_guess_col) in player_ships:
         print("Oh no! The computer sunk one of your battleships!")
-        player_board[computer_guess_row][computer_guess_col] = 'X'
+        player_board[computer_guess_row][computer_guess_col] = '@'
         player_ships.remove((computer_guess_row, computer_guess_col))
-    elif player_board[computer_guess_row][computer_guess_col] == 'X':
-        print("The computer guessed that one already.")
     else:
         print("The computer missed.")
         player_board[computer_guess_row][computer_guess_col] = 'X'
