@@ -45,7 +45,7 @@ for ship_row, ship_col in player_ships:
     player_board[ship_row][ship_col] = '*'
 
 # Game loop and sets amount of turns
-for turn in range(1):  # Ten turns to guess
+for turn in range(100):  # Ten turns to guess
     print("Turn", turn + 1)
 
 
