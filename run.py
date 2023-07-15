@@ -6,6 +6,11 @@ NUM_SHIPS = 4
 # Get the player's name
 player_name = input("Please enter your name: ")
 
+# Welcome message
+print("\n-------------------------------------------------")
+print("Welcome, " + player_name + "! Let's play Battleship!")
+print("Top left corner is row: 0, col: 0")
+
 # Creates the game board
 player_board = [['O' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 computer_board = [['O' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
@@ -52,8 +57,9 @@ for ship_row, ship_col in player_ships:
 guessed_cells = set()
 
 # Game loop and sets amount of turns
-for turn in range(100):  # Change to determin rounds
+for turn in range(100):  # Change to determine rounds
     print("Turn", turn + 1)
+    print("-------------------------------------------------")
 
     # Print the game boards
     print_boards(player_board, computer_board)
@@ -76,10 +82,12 @@ for turn in range(100):  # Change to determin rounds
 
     # Check if the guess is correct
     if (guess_row, guess_col) in computer_ships:
+        print("-------------------------------------------------")
         print("Congratulations,", player_name + "! You sunk a battleship!")
         computer_board[guess_row][guess_col] = '@'
         computer_ships.remove((guess_row, guess_col))
     else:
+        print("-------------------------------------------------")
         print("You missed.")
         computer_board[guess_row][guess_col] = 'X'
 
@@ -95,10 +103,12 @@ for turn in range(100):  # Change to determin rounds
     # Check if the computer's guess is correct
     if (computer_guess_row, computer_guess_col) in player_ships:
         print("Oh no,", player_name + "! The computer sunk one of your battleships!")
+        print("-------------------------------------------------")
         player_board[computer_guess_row][computer_guess_col] = '@'
         player_ships.remove((computer_guess_row, computer_guess_col))
     else:
         print("The computer missed.")
+        print("-------------------------------------------------")
         player_board[computer_guess_row][computer_guess_col] = 'X'
 
     # Check if all player's ships have been sunk
