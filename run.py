@@ -34,10 +34,10 @@ def print_boards(player_board, computer_board):
 # Checks that the user's input is valid else throws an error
 def validate_input(guess_row, guess_col, guessed_cells):
     if not isinstance(guess_row, int) or not isinstance(guess_col, int):
-        print("Error: Invalid guess. Please enter integer values.")
+        print("Invalid guess. You must enter a number!.")
         return False
     if guess_row < 0 or guess_row >= BOARD_SIZE or guess_col < 0 or guess_col >= BOARD_SIZE:
-        print("Error: Invalid guess. Please enter integer values within 0-4.")
+        print("Invalid guess. Values must be between 0 and 4!")
         return False
     if (guess_row, guess_col) in guessed_cells:
         print("You guessed that one already, try again.")
