@@ -6,7 +6,7 @@ NUM_SHIPS = 4
 # Get the player's name
 player_name = input("Please enter your name: ")
 
-# Create the game board
+# Creates the game board
 player_board = [['O' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 computer_board = [['O' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 
@@ -21,7 +21,7 @@ for _ in range(NUM_SHIPS):
     computer_ship_col = random.randint(0, BOARD_SIZE - 1)
     computer_ships.append((computer_ship_row, computer_ship_col))
 
-# Prints the game boards
+# Shows the game boards
 def print_boards(player_board, computer_board):
     print(player_name + "'s Board:")
     for row in player_board:
@@ -62,7 +62,7 @@ for turn in range(1):  # Ten turns to guess
             print("Error: Invalid guess. Please enter integer values.")
             continue
 
-        # Validate the player's guess
+        # Checks if the players guess is valid
         valid_guess = validate_input(guess_row, guess_col)
 
     # Check if the guess is correct
@@ -94,6 +94,6 @@ for turn in range(1):  # Ten turns to guess
         print("Oh no,", player_name + "! The computer sunk all your battleships!")
         break
 
-# Print the final game boards
+# Shows the final result
 print("\nFinal Game Boards:")
 print_boards(player_board, computer_board)
