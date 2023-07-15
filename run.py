@@ -1,6 +1,5 @@
 import random
 
-
 BOARD_SIZE = 5
 NUM_SHIPS = 4
 
@@ -28,6 +27,13 @@ def print_boards(player_board, computer_board):
     for row in computer_board:
         print(" ".join(row))
 
+# Function to validate user input
+def validate_input(guess_row, guess_col):
+    if guess_row < 0 or guess_row >= BOARD_SIZE or guess_col < 0 or guess_col >= BOARD_SIZE:
+        print("Error: Invalid guess. Please enter values within the battleship grid.")
+        return False
+    return True
+
 # Mark the player's battleship locations on their board
 for ship_row, ship_col in player_ships:
     player_board[ship_row][ship_col] = '*'
@@ -39,9 +45,14 @@ for turn in range(10):  # Ten turns to guess
     # Print the game boards
     print_boards(player_board, computer_board)
     
-    # Ask the player for a guess
-    guess_row = int(input("Guess Row (0-4): "))
-    guess_col = int(input("Guess Col (0-4): "))
+    valid_guess = False
+    while not valid_guess:
+        # Ask the player for a guess
+        guess_row = int(input("Guess Row (0-4): "))
+        guess_col = int(input("Guess Col (0-4): "))
+        
+        # Validate the player's guess
+        valid_guess = validate_input(guess_row, guess_col)
     
     # Check if the guess is correct
     if (guess_row, guess_col) in computer_ships:
