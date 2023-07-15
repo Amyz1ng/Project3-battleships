@@ -29,8 +29,11 @@ def print_boards(player_board, computer_board):
 
 # Function to validate user input
 def validate_input(guess_row, guess_col):
+    if not isinstance(guess_row, int) or not isinstance(guess_col, int):
+        print("Error: Invalid guess. Please enter integer values.")
+        return False
     if guess_row < 0 or guess_row >= BOARD_SIZE or guess_col < 0 or guess_col >= BOARD_SIZE:
-        print("Error: Invalid guess. Please enter values within the battleship grid.")
+        print("Error: Invalid guess. Please enter values within 0-4.")
         return False
     return True
 
@@ -39,7 +42,7 @@ for ship_row, ship_col in player_ships:
     player_board[ship_row][ship_col] = '*'
 
 # Game loop
-for turn in range(10):  # Ten turns to guess
+for turn in range(1):  # Ten turns to guess
     print("Turn", turn + 1)
     
     # Print the game boards
@@ -48,8 +51,12 @@ for turn in range(10):  # Ten turns to guess
     valid_guess = False
     while not valid_guess:
         # Ask the player for a guess
-        guess_row = int(input("Guess Row (0-4): "))
-        guess_col = int(input("Guess Col (0-4): "))
+        try:
+            guess_row = int(input("Guess Row (0-4): "))
+            guess_col = int(input("Guess Col (0-4): "))
+        except ValueError:
+            print("Error: Invalid guess. Please enter integer values.")
+            continue
         
         # Validate the player's guess
         valid_guess = validate_input(guess_row, guess_col)
