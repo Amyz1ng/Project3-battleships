@@ -21,7 +21,7 @@ for _ in range(NUM_SHIPS):
     computer_ship_col = random.randint(0, BOARD_SIZE - 1)
     computer_ships.append((computer_ship_row, computer_ship_col))
 
-# Function to print the game boards
+# Prints the game boards
 def print_boards(player_board, computer_board):
     print(player_name + "'s Board:")
     for row in player_board:
@@ -30,7 +30,7 @@ def print_boards(player_board, computer_board):
     for row in computer_board:
         print(" ".join(row))
 
-# Function to validate user input
+# Checks that the users input is valid else throws an error
 def validate_input(guess_row, guess_col):
     if not isinstance(guess_row, int) or not isinstance(guess_col, int):
         print("Error: Invalid guess. Please enter integer values.")
@@ -44,9 +44,10 @@ def validate_input(guess_row, guess_col):
 for ship_row, ship_col in player_ships:
     player_board[ship_row][ship_col] = '*'
 
-# Game loop
+# Game loop and sets amount of turns
 for turn in range(1):  # Ten turns to guess
     print("Turn", turn + 1)
+
 
     # Print the game boards
     print_boards(player_board, computer_board)
