@@ -31,7 +31,7 @@ I have manually tested this project by doing the following:
 - My validate_coordinates function was returning false positives because I hadn't structured the if statement properly  
 ## Remaining Bugs  
 No bugs remaining  
-#Validator Testing  
+## Validator Testing  
 - PEP8  
 - No errors were returned from PEP8online.com  
 # Deployment  
