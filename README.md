@@ -1,10 +1,10 @@
-# ULTIMATE Battleships  
-Ultimate Battleships is a Python terminal game, which runs in the Code Institute mock terminal on Heroku
+# Amyzing's Battleships  !
+Amyzing's Battleships is a Python terminal game, which runs in the Code Institute mock terminal on Heroku
 Users can try to beat the computer by finding all of the computer's battleships before the computer finds theirs. Each battleship occupies one square on the board.
 Here is the live version of my project.
 
 # How to play  
-Ultimate Battleships is based on the classic pen-and-paper game. You can read more about it on Wikipedia.
+Amyzing's Battleships is based on the classic pen-and-paper game. You can read more about it on Wikipedia.
 In this version, the player enters their name and two boards are randomly generated.
 The player can see where their ships are, indicated by an @ sign, but cannot see where the computer's ships are. Guesses are marked on the board with an X. Hits are indicated by * .
 The player and the computer then take it in turns to make guesses and try to sink each other's battleships.
