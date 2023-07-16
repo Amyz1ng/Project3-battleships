@@ -17,7 +17,9 @@ The winner is the player who sinks all of their opponent's battleships first.
 - Ships are randomly placed on both the player and computer boards  
 - The player cannot see where the computer's ships are   
 ## Future Features
-- Let the player set amount of turns allowed if wanted to
+- Give user ability to set amount of turns allowed
+- Allow own placement of battleships
+- Allow one battleship to take over multiple blocks
 # Testing  
 I have manually tested this project by doing the following:  
 - Passed the code through a PEP8 linter and confirmed there are no problems  
