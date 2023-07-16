@@ -15,10 +15,7 @@ The winner is the player who sinks all of their opponent's battleships first.
 - Ships are randomly placed on both the player and computer boards  
 - The player cannot see where the computer's ships are   
 ## Future Features
-- Allow player to select the board size and number of ships  
-- Allow player to position ships themselves  
-- Have ships larger than 1x1  
-
+- Let the player set amount of turns allowed if wanted to
 # Testing  
 I have manually tested this project by doing the following:  
 - Passed the code through a PEP8 linter and confirmed there are no problems  
@@ -26,8 +23,7 @@ I have manually tested this project by doing the following:
 - Tested in my local terminal and the Code Institute Heroku terminal  
 # Bugs
 ## Solved Bugs  
-- When I wrote the project, I was getting index errors because I had forgotten that the lists are zero indexed. I fixed this by adding size - 1 where necessary  
-- My validate_coordinates function was returning false positives because I hadn't structured the if statement properly  
+- Game would pop up error messages if incorrect input was entered, but would still count the turn and move on. I've fixed this to not continue until a valid value is given.
 ## Remaining Bugs  
 No bugs remaining  
 ## Validator Testing  
@@ -45,4 +41,4 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 - Click on Deploy  
 # Credits  
 - Code Institute for the deployment terminal  
-- Wikipedia for the details of the Battleships game  
+- Code Institute's Project Scope video
