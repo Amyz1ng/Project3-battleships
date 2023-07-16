@@ -12,9 +12,9 @@ The player can see where their ships are, indicated by an * sign, but cannot see
 The player and the computer then take it in turns to make guesses and try to sink each other's battleships.
 The winner is the player who sinks all of their opponent's battleships first.  
 Key notes:  
-* - Player Battleships  
-@ - Destroyed Battleships  
-X - Hit Markers  
+"*" - Player Battleships  
+"@" - Destroyed Battleships  
+"X" - Hit Markers  
 # Features
 ## Existing Features
 - Random board generation  
