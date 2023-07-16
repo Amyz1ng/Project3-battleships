@@ -5,17 +5,15 @@ Users can try to beat the computer by finding all of the computer's battleships 
 [Here](https://project3-battleships-36d94044604b.herokuapp.com/) is the live version of my project.
 
 # How to play  
-Amyzing's Battleships is based on the classic pen-and-paper game. You can read more about it on Wikipedia.
-In this version, the player enters their name and two boards are randomly generated.
-The player can see where their ships are, indicated by an @ sign, but cannot see where the computer's ships are. Guesses are marked on the board with an X. Hits are indicated by * .
+The player enters their name and two boards are randomly generated.
+The player can see where their ships are, indicated by an * sign, but cannot see where the computer's ships are. Guesses are marked on the board with an X. Hits are indicated by @ .
 The player and the computer then take it in turns to make guesses and try to sink each other's battleships.
 The winner is the player who sinks all of their opponent's battleships first.
 # Features
 ## Existing Features
 - Random board generation  
 - Ships are randomly placed on both the player and computer boards  
-- The player cannot see where the computer's ships are  
-- Data maintained in class instances  
+- The player cannot see where the computer's ships are   
 ## Future Features
 - Allow player to select the board size and number of ships  
 - Allow player to position ships themselves  
