@@ -1,5 +1,5 @@
 # Amyzing's Battleships
-Amyzing's Battleships is a Python terminal game, which runs in the Code Institute mock terminal on Heroku
+Amyzing's Battleships is a Python terminal game, which runs in the Code Institute mock terminal on Heroku  
 Users can try to beat the computer by finding all of the computer's battleships before the computer finds theirs. Each battleship occupies one square on the board.  
 
 [Here](https://project3-battleships-36d94044604b.herokuapp.com/) is the live version of my project.
