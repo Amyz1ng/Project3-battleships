@@ -1,9 +1,9 @@
-ULTIMATE Battleships
+# ULTIMATE Battleships  
 Ultimate Battleships is a Python terminal game, which runs in the Code Institute mock terminal on Heroku
 Users can try to beat the computer by finding all of the computer's battleships before the computer finds theirs. Each battleship occupies one square on the board.
 Here is the live version of my project.
-PAGSUS
-How to play
+
+# How to play  
 Ultimate Battleships is based on the classic pen-and-paper game. You can read more about it on Wikipedia.
 In this version, the player enters their name and two boards are randomly generated.
 The player can see where their ships are, indicated by an @ sign, but cannot see where the computer's ships are. Guesses are marked on the board with an X. Hits are indicated by * .
@@ -20,25 +20,25 @@ The winner is the player who sinks all of their opponent's battleships first.
 • Allow player to position ships themselves
 • Have ships larger than 1x1
 
-# Testing
+# Testing  
 I have manually tested this project by doing the following:
 • Passed the code through a PEP8 linter and confirmed there are no problems
 • Given invalid inputs: strings when numbers are expected, out of bounds inputs, same input twice
 • Tested in my local terminal and the Code Institute Heroku terminal
 # Bugs
-## Solved Bugs
+## Solved Bugs  
 • When I wrote the project, I was getting index errors because I had forgotten that the lists are zero indexed. I fixed this by adding size - 1 where necessary
 • My validate_coordinates function was returning false positives because I hadn't structured the if statement
 properly
-## Remaining Bugs
+## Remaining Bugs  
 •No bugs remaining
-#Validator Testing
+#Validator Testing  
 • PEP8
 。No errors were returned from PEP8online.com
-# Deployment
+# Deployment  
 This project was deployed using Code Institute's mock terminal for Heroku.
 •
-# Steps for deployment:
+# Steps for deployment:  
 o Fork or clone this repository
 • Create a new Heroku app
 • Set the build backs to Python and NodeJS in that order
