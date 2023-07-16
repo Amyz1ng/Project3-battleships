@@ -40,7 +40,8 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 # Steps for deployment:  
 - Fork or clone this repository  
 - Create a new Heroku app  
-- Set the build backs to Python and NodeJS in that order  
+- Set the build backs to Python and NodeJS in that order
+- Add config var to include Key: Port Value: 8000
 - Link the Heroku app to the repository  
 - Click on Deploy  
 # Credits  
