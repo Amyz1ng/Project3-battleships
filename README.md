@@ -32,7 +32,7 @@ I have manually tested this project by doing the following:
 No bugs remaining  
 ## Validator Testing  
 - PEP8  
-- No errors were returned from PEP8online.com
+- No errors were returned from [PEP8online.com](https://pep8ci.herokuapp.com/)
 ![PEP](https://github.com/Amyz1ng/Project3-battleships/assets/124196828/8b1c8881-3dc6-47dc-84a9-207990dce92f)
 
 # Deployment  
