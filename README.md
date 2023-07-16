@@ -10,11 +10,11 @@ Users can try to beat the computer by finding all of the computer's battleships 
 The player enters their name and two boards are randomly generated.
 The player can see where their ships are, indicated by an * sign, but cannot see where the computer's ships are. Guesses are marked on the board with an X. Hits are indicated by @ .
 The player and the computer then take it in turns to make guesses and try to sink each other's battleships.
-The winner is the player who sinks all of their opponent's battleships first.  
+The winner is the player who sinks all of their opponent's battleships first.   
 Key notes:  
-"*"   - Player Battleships  
-"@"   - Destroyed Battleships  
-"X"   - Hit Markers  
+"*"  - Player Battleships  
+"@"  - Destroyed Battleships  
+"X"  - Guessed Locations
 # Features
 ## Existing Features
 - Random board generation  
